@@ -1,0 +1,8 @@
+services:
+  pipeline:
+    build: .
+    # Files written to the project belong to this user instead of root
+    user: "${UID:-1000}:${GID:-1000}"
+    # The run reads data/ and writes reports/ in the project
+    volumes:
+      - .:/app
